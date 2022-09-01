@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public Text timerText;
 
     [Header("MONEY")]
-    public int money;
+    public float money;
     public int moneyIncreaseAmount;
     public Text moneyText;
 
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
             timerObj.SetActive(false); // setting timer text to false
             isClicked = false; // obj needs to be clicked again
             AddMoney(moneyIncreaseAmount); // adding money using our int
-            moneyText.text = "Money: " + money; // setting text
+            moneyText.text = "Money: $" + money; // setting text
             moneyNeedsToIncrease = false; // telling game we have our money for that click
             // reset timer
             timer = timeStartAmount;
