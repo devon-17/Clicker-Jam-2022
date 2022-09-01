@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+
     [Header("TIMER")]
     public float timer = 15;
     public float timeStartAmount = 5;
@@ -19,6 +21,9 @@ public class GameManager : MonoBehaviour
     private bool moneyNeedsToIncrease;
     private bool isClicked;
 
+    void Start(){
+        instance = this;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -52,14 +57,13 @@ public class GameManager : MonoBehaviour
         }
         if (timer <= 0) // when 0
         {
-            // reset timer
-            timer = timeStartAmount;
-
             timerObj.SetActive(false); // setting timer text to false
             isClicked = false; // obj needs to be clicked again
             AddMoney(moneyIncreaseAmount); // adding money using our int
             moneyText.text = "Money: " + money; // setting text
             moneyNeedsToIncrease = false; // telling game we have our money for that click
+            // reset timer
+            timer = timeStartAmount;
         }
     }
 }

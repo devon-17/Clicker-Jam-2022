@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public Text menuText;
     public GameObject menu;
     public GameObject gamePanel;
+    public float speedDecrease;
 
     // Start is called before the first frame update
     void Start()
@@ -37,5 +38,9 @@ public class UIManager : MonoBehaviour
             menuText.text = "Menu";
             gamePanel.SetActive(true);
         }
+    }
+
+    public void SpeedIncrease(){
+        GameManager.instance.timeStartAmount -= speedDecrease;
     }
 }
