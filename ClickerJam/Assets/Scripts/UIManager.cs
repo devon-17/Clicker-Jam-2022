@@ -12,8 +12,16 @@ public class UIManager : MonoBehaviour
     public GameObject menu;
     public GameObject gamePanel;
 
-    public float speedDecreaseBuyAmount;
-    public float speedDecrease;
+    public GameObject upgradeBtn;
+    public Text costTxt;
+    public Color cannotBuyColor;
+    public Color canBuyColor;
+
+    public Text upgradesLeftTxt;
+
+    public float upgradeBuyAmount;
+
+    public int upgradesLeft = 25;
 
     // Start is called before the first frame update
     void Start()
@@ -22,12 +30,14 @@ public class UIManager : MonoBehaviour
 
         menu.SetActive(false);
         gamePanel.SetActive(true);
+
+        upgradesLeftTxt.text = "Upgrades Left: " + upgradesLeft;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        CostManager();
     }
 
     public void MenuBtnClick()
@@ -46,19 +56,27 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void TimerDecrease(){
-        if(GameManager.instance.money >= speedDecreaseBuyAmount)
+    public void UpragdeBtnClick(){
+        if(GameManager.instance.money >= upgradeBuyAmount && upgradesLeft > 0)
         {
-            GameManager.instance.timeStartAmount -= speedDecrease;
-            GameManager.instance.timer = GameManager.instance.timeStartAmount;
-            GameManager.instance.money -= speedDecreaseBuyAmount;
+            GameManager.instance.moneyIncreaseAmount *= 1.3f;
+            GameManager.instance.money -= upgradeBuyAmount;
             GameManager.instance.moneyText.text = "Money: $" + GameManager.instance.money.ToString("f2");
-            speedDecreaseBuyAmount *= 1.5f;          
-        }
+            upgradeBuyAmount *= 1.5f;
 
-        if(GameManager.instance.timeStartAmount <= 0){
-            GameManager.instance.timeStartAmount = 0.1f;
-            GameManager.instance.timer = 0.1f;
-        }   
+            upgradesLeft --;
+
+            upgradesLeftTxt.text = "Upgrades Left: " + upgradesLeft;
+        }
+    }
+
+    public void CostManager(){
+        costTxt.text = "$" + upgradeBuyAmount.ToString("f2");
+
+        if(GameManager.instance.money < upgradeBuyAmount){
+            upgradeBtn.GetComponent<Image>().color = cannotBuyColor;
+        }else if(GameManager.instance.money >= upgradeBuyAmount){
+            upgradeBtn.GetComponent<Image>().color = canBuyColor;
+        }
     }
 }

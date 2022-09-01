@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     [Header("MONEY")]
     public float money;
-    public int moneyIncreaseAmount;
+    public float moneyIncreaseAmount;
     public Text moneyText;
 
     private bool moneyNeedsToIncrease;
@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         TimerManager();
     }
 
-    public void AddMoney(int amount)
+    public void AddMoney(float amount)
     {
         money += amount;
     }
