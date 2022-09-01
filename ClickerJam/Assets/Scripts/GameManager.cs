@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     public void TimerManager()
     {
         // when obj is clicked
-        if(isClicked)
+        if (isClicked)
         {
             timer -= Time.deltaTime; // start timer
 
@@ -48,9 +48,9 @@ public class GameManager : MonoBehaviour
             timerText.text = "Time Left: " + timer.ToString("f2");
 
             // money needs to increase so we can add money
-            moneyNeedsToIncrease = true; 
+            moneyNeedsToIncrease = true;
         }
-        if(timer <= 0) // when 0
+        if (timer <= 0) // when 0
         {
             // reset timer
             timer = timeStartAmount;
