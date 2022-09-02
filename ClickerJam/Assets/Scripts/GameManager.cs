@@ -51,9 +51,6 @@ public class GameManager : MonoBehaviour
             // activating timer obj and setting text
             timerObj.SetActive(true);
             timerText.text = "Time Left: " + timer.ToString("f2");
-
-            // money needs to increase so we can add money
-            moneyNeedsToIncrease = true;
         }
         if (timer <= 0) // when 0
         {
@@ -61,7 +58,6 @@ public class GameManager : MonoBehaviour
             isClicked = false; // obj needs to be clicked again
             AddMoney(moneyIncreaseAmount); // adding money using our int
             moneyText.text = "Money: $" + money; // setting text
-            moneyNeedsToIncrease = false; // telling game we have our money for that click
             // reset timer
             timer = timeStartAmount;
         }
