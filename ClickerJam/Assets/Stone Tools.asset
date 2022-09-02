@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98ad83810ae08bd4188dd24e6ef36adc, type: 3}
   m_Name: Stone Tools
   m_EditorClassIdentifier: 
-  timer: 1.8159326
+  timer: 5
   timeStartAmount: 5
-  timerObj: {fileID: 3536435680058194594, guid: ff725215565776049a079350102eb99c, type: 3}
-  timerText: {fileID: 3536435680058194597, guid: ff725215565776049a079350102eb99c, type: 3}
-  isClicked: 1
-  moneyIncreaseAmount: 0
+  isClicked: 0
+  moneyIncreaseAmount: 1

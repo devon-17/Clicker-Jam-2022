@@ -8,8 +8,6 @@ public class Object : ScriptableObject
 {
     public float timer = 15;
     public float timeStartAmount = 5;
-    public GameObject timerObj;
-    public Text timerText;
     public bool isClicked;
     public float moneyIncreaseAmount;
 }

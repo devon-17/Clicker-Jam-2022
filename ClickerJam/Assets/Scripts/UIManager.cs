@@ -37,27 +37,10 @@ public class UIManager : MonoBehaviour
         CostManager();
     }
 
-/*
-    public void MenuBtnClick()
-    {
-        if (!menu.activeInHierarchy)
-        {
-            menu.SetActive(true);
-            menuText.text = "Close Menu";
-            gamePanel.SetActive(false);
-        }
-        else
-        {
-            menu.SetActive(false);
-            menuText.text = "Menu";
-            gamePanel.SetActive(true);
-        }
-    }
-*/
     public void UpragdeBtnClick(){
         if(GameManager.instance.money >= upgradeBuyAmount && upgradesLeft > 0)
         {
-            GameManager.instance.moneyIncreaseAmount *= moneyMultiplier;
+            TimeManager.instance.item.moneyIncreaseAmount *= moneyMultiplier;
             GameManager.instance.money -= upgradeBuyAmount;
             GameManager.instance.moneyText.text = "Money: $" + GameManager.instance.money.ToString("f2");
             upgradeBuyAmount *= 1.1f;
@@ -79,13 +62,13 @@ public class UIManager : MonoBehaviour
     }
 
     public void SpeedDecrease(){
-        if(upgradesLeft == 20){
+        if(upgradesLeft == 23){
             Upgrade();
         }
     }
 
     public void Upgrade(){
-        GameManager.instance.timer *= 0.5f;
-        
+        TimeManager.instance.item.timer *= 0.5f;
+        TimeManager.instance.item.timeStartAmount *= 0.5f;
     }
 }
