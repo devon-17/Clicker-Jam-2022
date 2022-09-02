@@ -6,9 +6,10 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    
 
     [Header("TIMER")]
-    public float timer = 15;
+    public float timer;
     public float timeStartAmount = 5;
     public GameObject timerObj;
     public Text timerText;
@@ -19,7 +20,7 @@ public class GameManager : MonoBehaviour
     public Text moneyText;
 
     private bool moneyNeedsToIncrease;
-    private bool isClicked;
+
 
     void Start(){
         instance = this;
@@ -27,7 +28,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TimerManager();
+        //TimerManager();
     }
 
     public void AddMoney(float amount)
@@ -36,30 +37,8 @@ public class GameManager : MonoBehaviour
     }
 
     // event trigger component on obj
-    public void StartTimer()
+    public void StartTimer(Object item)
     {
-        isClicked = true;
-    }
-
-    public void TimerManager()
-    {
-        // when obj is clicked
-        if (isClicked)
-        {
-            timer -= Time.deltaTime; // start timer
-
-            // activating timer obj and setting text
-            timerObj.SetActive(true);
-            timerText.text = "Time Left: " + timer.ToString("f2");
-        }
-        if (timer <= 0) // when 0
-        {
-            timerObj.SetActive(false); // setting timer text to false
-            isClicked = false; // obj needs to be clicked again
-            AddMoney(moneyIncreaseAmount); // adding money using our int
-            moneyText.text = "Money: $" + money; // setting text
-            // reset timer
-            timer = timeStartAmount;
-        }
+        item.isClicked = true;     
     }
 }
