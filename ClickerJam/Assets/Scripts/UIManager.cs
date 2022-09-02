@@ -40,6 +40,7 @@ public class UIManager : MonoBehaviour
     public void UpragdeBtnClick(){
         if(GameManager.instance.money >= upgradeBuyAmount && upgradesLeft > 0)
         {
+            Debug.Log(TimeManager.instance.item);
             TimeManager.instance.item.moneyIncreaseAmount *= moneyMultiplier;
             GameManager.instance.money -= upgradeBuyAmount;
             GameManager.instance.moneyText.text = "Money: $" + GameManager.instance.money.ToString("f2");

@@ -26,14 +26,14 @@ public class TimeManager : MonoBehaviour
             item.timer -= Time.deltaTime; // start timer
 
             timerObj.SetActive(true);   
-            timerText.text = "Time Left: " + item.timer.ToString("f2");
+            timerText.text = item.timer.ToString("f2");
         }
         if (item.timer <= 0) // when 0
         {
             timerObj.SetActive(false);   
             item.isClicked = false; // obj needs to be clicked again
             GameManager.instance.AddMoney(item.moneyIncreaseAmount); // adding money using our int
-            GameManager.instance.moneyText.text = "Money: $" + GameManager.instance.money; // setting text
+            GameManager.instance.moneyText.text = "Money: $" + GameManager.instance.money.ToString("f2"); // setting text
             // reset timer
             item.timer = item.timeStartAmount;
         }
