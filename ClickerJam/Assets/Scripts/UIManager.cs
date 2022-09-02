@@ -7,11 +7,6 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
 
-    public GameObject menuBtn;
-    public Text menuText;
-    public GameObject menu;
-    public GameObject gamePanel;
-
     public GameObject upgradeBtn;
     public Text costTxt;
     public Color cannotBuyColor;
@@ -21,6 +16,8 @@ public class UIManager : MonoBehaviour
 
     public float upgradeBuyAmount;
 
+    public float moneyMultiplier;
+
     public int upgradesLeft = 25;
 
     // Start is called before the first frame update
@@ -28,8 +25,8 @@ public class UIManager : MonoBehaviour
     {
         instance = this;
 
-        menu.SetActive(false);
-        gamePanel.SetActive(true);
+        //menu.SetActive(false);
+        //gamePanel.SetActive(true);
 
         upgradesLeftTxt.text = "Upgrades Left: " + upgradesLeft;
     }
@@ -40,6 +37,7 @@ public class UIManager : MonoBehaviour
         CostManager();
     }
 
+/*
     public void MenuBtnClick()
     {
         if (!menu.activeInHierarchy)
@@ -55,14 +53,14 @@ public class UIManager : MonoBehaviour
             gamePanel.SetActive(true);
         }
     }
-
+*/
     public void UpragdeBtnClick(){
         if(GameManager.instance.money >= upgradeBuyAmount && upgradesLeft > 0)
         {
-            GameManager.instance.moneyIncreaseAmount *= 1.3f;
+            GameManager.instance.moneyIncreaseAmount *= moneyMultiplier;
             GameManager.instance.money -= upgradeBuyAmount;
             GameManager.instance.moneyText.text = "Money: $" + GameManager.instance.money.ToString("f2");
-            upgradeBuyAmount *= 1.5f;
+            upgradeBuyAmount *= 1.1f;
 
             upgradesLeft --;
 
@@ -78,5 +76,16 @@ public class UIManager : MonoBehaviour
         }else if(GameManager.instance.money >= upgradeBuyAmount){
             upgradeBtn.GetComponent<Image>().color = canBuyColor;
         }
+    }
+
+    public void SpeedDecrease(){
+        if(upgradesLeft == 20){
+            Upgrade();
+        }
+    }
+
+    public void Upgrade(){
+        GameManager.instance.timer *= 0.5f;
+        
     }
 }
