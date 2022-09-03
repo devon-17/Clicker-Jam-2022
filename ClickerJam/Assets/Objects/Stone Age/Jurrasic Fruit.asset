@@ -15,4 +15,4 @@ MonoBehaviour:
   timer: 8
   timeStartAmount: 8
   isClicked: 0
-  moneyIncreaseAmount: 1.5
+  moneyIncreaseAmount: 1.4

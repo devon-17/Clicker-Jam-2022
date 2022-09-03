@@ -7,11 +7,11 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
 
+    public TimeManager timeManager;
     public GameObject upgradeBtn;
     public Text costTxt;
     public Color cannotBuyColor;
     public Color canBuyColor;
-
     public Text upgradesLeftTxt;
 
     public float upgradeBuyAmount;
@@ -40,8 +40,8 @@ public class UIManager : MonoBehaviour
     public void UpragdeBtnClick(){
         if(GameManager.instance.money >= upgradeBuyAmount && upgradesLeft > 0)
         {
-            Debug.Log(TimeManager.instance.item);
-            TimeManager.instance.item.moneyIncreaseAmount *= moneyMultiplier;
+            Debug.Log(timeManager.item);
+            timeManager.item.moneyIncreaseAmount *= moneyMultiplier;
             GameManager.instance.money -= upgradeBuyAmount;
             GameManager.instance.moneyText.text = "Money: $" + GameManager.instance.money.ToString("f2");
             upgradeBuyAmount *= 1.1f;
@@ -69,7 +69,7 @@ public class UIManager : MonoBehaviour
     }
 
     public void Upgrade(){
-        TimeManager.instance.item.timer *= 0.5f;
-        TimeManager.instance.item.timeStartAmount *= 0.5f;
+        timeManager.item.timer *= 0.5f;
+        timeManager.item.timeStartAmount *= 0.5f;
     }
 }
