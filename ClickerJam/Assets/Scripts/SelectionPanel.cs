@@ -27,6 +27,7 @@ public class SelectionPanel : MonoBehaviour
     public void ManagerPanel()
     {
         Debug.Log("CLICKED");
+        
         managersPanel.SetActive(true);
         specialUpgradesBtn.SetActive(false);
         managerBtn.SetActive(false);
