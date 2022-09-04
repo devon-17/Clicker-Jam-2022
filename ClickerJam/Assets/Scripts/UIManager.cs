@@ -38,6 +38,7 @@ public class UIManager : MonoBehaviour
     }
 
     public void UpragdeBtnClick(){
+        Debug.Log(timeManager.item.name);
         if(GameManager.instance.money >= upgradeBuyAmount && upgradesLeft > 0)
         {
             Debug.Log(timeManager.item);
