@@ -34,7 +34,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CostManager();
+        CostManager();        
     }
 
     public void UpragdeBtnClick(){
@@ -50,6 +50,8 @@ public class UIManager : MonoBehaviour
             upgradesLeft --;
 
             upgradesLeftTxt.text = "Upgrades Left: " + upgradesLeft;
+
+            SpeedDecrease();
         }
     }
 
@@ -63,8 +65,26 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void SpeedDecrease(){
-        if(upgradesLeft == 23){
+    public void SpeedDecrease()
+    {
+        if(upgradesLeft == 20)
+        {
+            Upgrade();
+        }
+        else if(upgradesLeft == 15)
+        {
+            Upgrade();
+        }
+        else if (upgradesLeft == 10)
+        {
+            Upgrade();
+        }
+        else if (upgradesLeft == 5)
+        {
+            Upgrade();
+        }
+        else if (upgradesLeft == 0)
+        {
             Upgrade();
         }
     }

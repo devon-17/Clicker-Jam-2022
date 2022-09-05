@@ -1,12 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Manager : MonoBehaviour
-{
+{                                   
     public Object item;
-    public bool hasManager;
+    public Button button;
+    public GameObject ownedText;
+    public bool hasManager;                                     
  
+    void Start()
+    {
+        ownedText.SetActive(false);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -29,11 +37,13 @@ public class Manager : MonoBehaviour
 
     public void ManagerBtnClick()
     {
-        if (GameManager.instance.money >= 5)
+        if (GameManager.instance.money >= item.toBuyManagerPrice)
         {
-            Debug.Log(item.name + "now has a manager"); 
-            GameManager.instance.money -= 5;
+            Debug.Log(item.name + " now has a manager"); 
+            GameManager.instance.money -= item.toBuyManagerPrice;
             hasManager = true;
+            button.interactable = false;
+            ownedText.SetActive(true);
         }
     }
 }
