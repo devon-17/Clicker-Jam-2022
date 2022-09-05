@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 7d84ffad8db21d544a59141b41879375
+  - enabled: 1
     path: Assets/Scenes/Caveman Era.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Rome Era.unity
+    guid: 857cbdee3ad29e144852e6bdfc9da858
+  - enabled: 1
+    path: Assets/Scenes/Modern Era.unity
+    guid: 86e6b6e59d7e687468c67a8b9b9338c8
   m_configObjects: {}

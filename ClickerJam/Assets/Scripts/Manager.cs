@@ -8,11 +8,14 @@ public class Manager : MonoBehaviour
     public Object item;
     public Button button;
     public GameObject ownedText;
+    public GameObject price;
+    public Text priceText;
     public bool hasManager;                                     
  
     void Start()
     {
         ownedText.SetActive(false);
+        priceText.text = "$" + item.toBuyManagerPrice;
     }
 
     // Update is called once per frame
@@ -43,6 +46,7 @@ public class Manager : MonoBehaviour
             GameManager.instance.money -= item.toBuyManagerPrice;
             hasManager = true;
             button.interactable = false;
+            price.SetActive(false);
             ownedText.SetActive(true);
         }
     }

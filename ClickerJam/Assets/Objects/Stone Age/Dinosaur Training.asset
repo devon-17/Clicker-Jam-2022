@@ -16,4 +16,4 @@ MonoBehaviour:
   timeStartAmount: 6
   isClicked: 0
   moneyIncreaseAmount: 1.3
-  toBuyManagerPrice: 2
+  toBuyManagerPrice: 80

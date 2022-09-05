@@ -18,6 +18,8 @@ public class UIManager : MonoBehaviour
 
     public float moneyMultiplier;
 
+    public AudioSource moneyAudio;
+
     public int upgradesLeft = 25;
 
     // Start is called before the first frame update
@@ -90,6 +92,7 @@ public class UIManager : MonoBehaviour
     }
 
     public void Upgrade(){
+        moneyAudio.Play();
         timeManager.item.timer *= 0.5f;
         timeManager.item.timeStartAmount *= 0.5f;
     }
