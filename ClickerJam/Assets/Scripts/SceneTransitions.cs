@@ -11,6 +11,7 @@ public class SceneTransitions : MonoBehaviour
     public float timeMachineCost;
     public string sceneToGoTo;
     public Text costText;
+    public bool isLoading = false;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class SceneTransitions : MonoBehaviour
             costText.text = "Cost: $" + timeMachineCost.ToString("f2");
     }
 
+
     public void MoveScene(string name)
     {
         SceneManager.LoadScene(name);
@@ -28,14 +30,16 @@ public class SceneTransitions : MonoBehaviour
     public void BuyTimeMachine()
     {
         print("Clicked");
-        MoveScene(sceneToGoTo);
+        
         if(GameManager.instance.money >= timeMachineCost)
         {
             GameManager.instance.money -= timeMachineCost;
             GameManager.instance.moneyText.text = "Money: $" + GameManager.instance.money.ToString("f2");
-            
-        }
+            MoveScene(sceneToGoTo);
+            isLoading = false;
+        } 
     }
+
 
     public IEnumerator PortalAnim(){
         gameCanvas.SetActive(false);

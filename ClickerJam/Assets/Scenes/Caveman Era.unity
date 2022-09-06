@@ -4042,9 +4042,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animObj: {fileID: 1466094864}
-  timeMachineCost: 0
+  timeMachineCost: 200
   sceneToGoTo: Rome Era
   costText: {fileID: 75749507}
+  isLoading: 0
 --- !u!4 &1185978982
 Transform:
   m_ObjectHideFlags: 0
