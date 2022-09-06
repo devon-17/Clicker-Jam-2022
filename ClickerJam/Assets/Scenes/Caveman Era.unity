@@ -200,6 +200,86 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27863457}
   m_CullTransparentMesh: 1
+--- !u!1 &75749506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 75749509}
+  - component: {fileID: 75749508}
+  - component: {fileID: 75749507}
+  m_Layer: 5
+  m_Name: Cost Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &75749507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75749506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 5fc748c48ee4b7042905dd769abe9e03, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 45
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Cost:000
+--- !u!222 &75749508
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75749506}
+  m_CullTransparentMesh: 1
+--- !u!224 &75749509
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75749506}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1800670044}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.9568939, y: -36}
+  m_SizeDelta: {x: -19.1359, y: -163.612}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &124885040
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,7 +868,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1809972751052412219, guid: 3215802db00f7a5438205933dd24a353, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1809972751052412220, guid: 3215802db00f7a5438205933dd24a353, type: 3}
       propertyPath: m_Text
@@ -2206,7 +2286,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 596636761}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1185978981}
+        m_TargetAssemblyTypeName: SceneTransitions, Assembly-CSharp
+        m_MethodName: BuyTimeMachine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &596636761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2568,7 +2660,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1809972751052412219, guid: 3215802db00f7a5438205933dd24a353, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1809972751052412220, guid: 3215802db00f7a5438205933dd24a353, type: 3}
       propertyPath: m_Text
@@ -3752,6 +3844,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63fb4f6a2deac4a40aa61b1eb95aa33a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1185978980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1185978982}
+  - component: {fileID: 1185978981}
+  m_Layer: 0
+  m_Name: Scene Transition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1185978981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185978980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea97ec6bef3089c498ca2ed11cbe3f1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeMachineCost: 200
+  sceneToGoTo: Rome Era
+  costText: {fileID: 75749507}
+--- !u!4 &1185978982
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185978980}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1238627556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3762,7 +3901,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1809972751052412219, guid: 3215802db00f7a5438205933dd24a353, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1809972751052412220, guid: 3215802db00f7a5438205933dd24a353, type: 3}
       propertyPath: m_Text
@@ -4705,6 +4844,7 @@ RectTransform:
   m_Children:
   - {fileID: 535557774}
   - {fileID: 596636759}
+  - {fileID: 75749509}
   m_Father: {fileID: 306147033}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4766,7 +4906,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1819452989
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5602,7 +5742,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1809972751052412219, guid: 3215802db00f7a5438205933dd24a353, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1809972751052412220, guid: 3215802db00f7a5438205933dd24a353, type: 3}
       propertyPath: m_Text
@@ -6080,7 +6220,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1809972751052412219, guid: 3215802db00f7a5438205933dd24a353, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1809972751052412220, guid: 3215802db00f7a5438205933dd24a353, type: 3}
       propertyPath: m_Text
