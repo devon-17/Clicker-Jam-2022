@@ -31,6 +31,8 @@ public class UIManager : MonoBehaviour
         //gamePanel.SetActive(true);
 
         upgradesLeftTxt.text = "Upgrades Left: " + upgradesLeft;
+
+        GameManager.instance.moneyText.text = "Money: $" + GameManager.instance.money.ToString("f2");
     }
 
     // Update is called once per frame
