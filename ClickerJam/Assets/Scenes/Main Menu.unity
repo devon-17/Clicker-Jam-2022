@@ -604,6 +604,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea97ec6bef3089c498ca2ed11cbe3f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animObj: {fileID: 0}
+  timeMachineCost: 0
+  sceneToGoTo: 
+  costText: {fileID: 0}
 --- !u!1 &463671254
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,11 +27,13 @@ public class SceneTransitions : MonoBehaviour
 
     public void BuyTimeMachine()
     {
+        print("Clicked");
+        MoveScene(sceneToGoTo);
         if(GameManager.instance.money >= timeMachineCost)
         {
             GameManager.instance.money -= timeMachineCost;
             GameManager.instance.moneyText.text = "Money: $" + GameManager.instance.money.ToString("f2");
-            MoveScene(sceneToGoTo);
+            
         }
     }
 
